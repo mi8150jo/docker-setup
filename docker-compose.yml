@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    build: ./docker/postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+
+  web:
+    build: ./docker/python
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8100:8000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_volume:
+    
