@@ -6,8 +6,8 @@ services:
     build: ./docker/postgres
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=mi8150jo
+      - POSTGRES_PASSWORD=Joejoe5710
     volumes:
       - postgres_volume:/var/lib/postgresql/data
 
