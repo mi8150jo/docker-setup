@@ -15,7 +15,7 @@ services:
     build: ./docker/python
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - ./twittervideodownloader:/code
     ports:
       - "8100:8000"
     depends_on:
